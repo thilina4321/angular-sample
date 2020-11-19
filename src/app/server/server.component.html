@@ -1,0 +1,14 @@
+<h1>Welcome to the game</h1>
+
+<button class="btn" (click)="generatePattern()">Generate</button>
+
+<br />
+<span [ngStyle]="{color: answer[i] == a ? 'green': answer[i]  ? 'red': 'black'}"
+ *ngFor="let a of guestion.split(''); let i = index">
+   {{ a }}
+</span>
+<br />
+
+<input type="text" [(ngModel)]="answer" />
+
+<p *ngIf="guestion && guestion == answer"> You won the game... </p>
